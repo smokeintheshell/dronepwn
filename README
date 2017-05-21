@@ -1,0 +1,9 @@
+# Drone pwn
+Dependencies:
+	python
+	nodejs
+		npm
+		node-ar-dron
+		multiline
+		ar-drone-fleet
+	pip
