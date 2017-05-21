@@ -6,4 +6,16 @@ Dependencies:
 		node-ar-dron
 		multiline
 		ar-drone-fleet
-	pip
+
+To get ar-drone-fleet working do the following from shell:
+	node
+	node> var arDroneFleet = require('ar-drone-fleet');
+	node> var fleet = new arDroneFleet({
+		drone1 : {ip:'192.168.2.100'},
+		drone2 : {ip:'192.168.2.101'},
+		...
+		});
+	node> fleet.services.drone1._options = {ip:'192.168.2.100'};
+	node> fleet.services.drone2._options = {ip:'192.168.2.101'};
+		...
+	node> fleet.takeoff()
