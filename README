@@ -3,7 +3,7 @@ Dependencies:
 	python
 	nodejs
 		npm
-		node-ar-dron
+		ar-drone
 		multiline
 		ar-drone-fleet
 
