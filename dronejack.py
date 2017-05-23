@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
 
+'''
+This is my python adaptation to Samy Kamkar's (https://github.com/samyk) skyjack perl utility
+The basic premise is the same, use airodump to identify APs are parrot drones based on OUI,
+deauth users connected to the drone, and then take it over. This tool is guided so users can
+specify which interfaces to use to perform the attack against the parrot drone and 
+automatically run a users chosen node.js script. Note that this will only work one ONE drone
+in vicinity of the scanning interface at a time. Unknown if any additional drones may
+break functionality
+TODO:
+1. Implement regex to identify all clients associated to the AP, save them in a dict, then use
+aireplay to deauth only those clients so user can connect simulataneously during attack.
+2. Ensure functionality of attacking multiple drones at the same time
+3. Integrate dronepwn.sh functions into this script, create menu to for user to select attack
+type, either aircrack suite based, iwconfig with telnet based, or perhaps a hybrid of the two
+wherein all clients get deauthed from AP and user connects and the script will implement 
+issuing telnet commands
+
+End goal is for the entire project to be written solely in python and js. This would make for
+a cleaner and easier to read program. This script is the bulk of where the project will lie
+in the future, dronepwn bash scripts were created simply out of necessity to get a working
+project up and going in the span of 48 hours.
+'''
+
 import time
 import re
 import subprocess
