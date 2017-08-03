@@ -19,3 +19,21 @@ To get ar-drone-fleet working do the following from shell:
 	node> fleet.services.drone2._options = {ip:'192.168.2.101'};
 		...
 	node> fleet.takeoff()
+NOTES:
+	Theres two different attack methodologies in this repo. Theres one which works against one drone by running airodump to identify
+	the drone by OUI, then performs a broad DEAUTH on all connected clients. The limitation here is that the script attempts to time
+	the connection from the Attack Platform to take control of the drone before another client connects and launches a controller.
+	This can be mitigated by using another string of regex on the pcap file to identify clients already connected to the drone and
+	sending deauths to them WHILE connecting to the drone. Another limitation of this is that it requires two wireless cards, at least
+	one of which must be capable of both monitor (promiscuous) mode and packet injection.
+	The other script works by setting up an AP with hostapd, then uses the iwutils suite to scan for APs, connects to the drone,
+	and issues a series of commands via telnet to connect the drone to the Attack Platform's AP. This is excellent for attacking
+	multiple drones at once and controlling them with the fleet. The only known limitation of this at this time is that the script
+	currently searches for a string in the ESSID. This can be modified using regular expressions to identify the drone by OUI.
+	The telnet commands are not always reliable. This is due to an issue with the timing of sleeps and when the commands complete
+	execution. The sleep times I have right now are the closest I have gotten to 100% reliable with timely execution.
+TODO:
+	Implement host discovery in the Fleet node.js script to replace hard cording drone IPs
+	Consolidate the multi drone focused bash script into the single drone focused python script.
+	Replace string search for the ESSID with capturing the BSSID
+	
