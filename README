@@ -1,3 +1,21 @@
+##########
+This repository is now deprecated, the code is old and built on baseline understandings of Python programming.
+While redoing the codebase is slotted as a future project, it is currently in backlog and does not have a planned initial release.
+PR's are still more than welcome to this repository, and vetted PRs will be merged. 
+
+All code published within this repository is distributed under Do What The Fuck You Want To Public License (WTFPL):
+
+ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+I (@smokeintheshell/@shellsmoke) maintain zero culpability in the use or modification of the code within this repository, all usage of the code found within
+the DronePWN repository is used at-will and is subject to the user's local/national laws and regulations
+
+Have fun, hack the planet, do good.
+##########
+
 # Drone pwn
 Dependencies:
 	python
